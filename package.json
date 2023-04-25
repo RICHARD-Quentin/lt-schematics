@@ -12,6 +12,12 @@
   "author": "",
   "license": "MIT",
   "schematics": "./src/collection.json",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public",
+    "tag": "latest",
+    "scope": "@libertech"
+  },
   "dependencies": {
     "@angular-devkit/core": "^15.2.6",
     "@angular-devkit/schematics": "^15.2.6",

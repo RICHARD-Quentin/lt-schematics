@@ -9,6 +9,9 @@ src/**/*.d.ts
 jsconfig.json
 .vscode/
 
+!src/lib/*
+!src/utils/*
+
 # Misc
 node_modules/
 npm-debug.log*
