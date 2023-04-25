@@ -1,16 +1,16 @@
-
 # Outputs
-src/**/*.js
-src/**/*.js.map
-src/**/*.d.ts
+src/lib/**/*.js
+src/lib/**/*.d.ts
+!src/lib/resource/*.d.ts
+!src/lib/**/files/**/*
+!src/lib/**/workspace/**/*
+src/utils/**/*.js
+src/utils/**/*.d.ts
 
 # IDEs
 .idea/
 jsconfig.json
 .vscode/
-
-!src/lib/*
-!src/utils/*
 
 # Misc
 node_modules/
@@ -21,4 +21,4 @@ yarn-error.log*
 **/.DS_Store
 .DS_Store
 
-dist/
+dist

@@ -4,15 +4,22 @@
   "description": "A schematics for NestJS to generate mongoose models from Libertech",
   "repository": "https://github.com/RICHARD-Quentin/lt-schematics",
   "scripts": {
-    "build": "tsc",
-    "test": "npm run build && jasmine src/**/*_spec.js"
+    "build": "rm -rf dist && tsc --project tsconfig.lib.json",
+    "postbuild": "npm run copy:collection && npm run copy:lib",
+    "copy:collection": "cpx src/collection.json dist && cpx 'src/lib/**/schema.json' dist/lib",
+    "copy:lib": "cpx 'src/lib/**/{files,workspace}/**/*.*' dist/lib && cpx 'src/lib/**/{files,workspace}/**/.!(gitignore)' dist/lib",
+    "test": "npm run build && jasmine src/**/*_spec.js",
+    "prepublish:next": "npm run build",
+    "publish:next": "npm publish --access public --tag next",
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish --access public"
   },
   "keywords": [
     "schematics"
   ],
   "author": "",
   "license": "MIT",
-  "schematics": "./src/collection.json",
+  "schematics": "./dist/collection.json",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
     "access": "public"
@@ -37,6 +44,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jasmine": "^4.0.0",
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
+    "cpx": "1.5.0"
   }
 }

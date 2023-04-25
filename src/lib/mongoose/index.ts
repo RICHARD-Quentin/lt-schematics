@@ -12,7 +12,7 @@ import {
 import { strings } from '@angular-devkit/core'
 import { Tree } from '@angular-devkit/schematics/src/tree/interface'
 import 'reflect-metadata'
-import { ModuleFinder, ModuleDeclarator } from '../utils'
+import { ModuleFinder, ModuleDeclarator } from '../../utils'
 export function mongooseSchematic(options: any): Rule {
   return () => {
     const sourceTemplates = url('./files')
