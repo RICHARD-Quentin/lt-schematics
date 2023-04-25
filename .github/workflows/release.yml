@@ -1,0 +1,29 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version_increment:
+        description: 'La version a incrémenter (major, minor, patch)'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+        - 'major'
+        - 'minor'
+        - 'patch'
+        
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+      - name: Publish to npm
+        uses: Libertech-FR/lt-actions/release-npm@main
+        with:
+          version_increment: ${{ github.event.inputs.version_increment }}
+          repository: ${{ github.repository }}
+          github_token: ${{ secrets.PUBLISH_TOKEN }}
