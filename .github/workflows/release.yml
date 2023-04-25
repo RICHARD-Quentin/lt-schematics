@@ -14,7 +14,7 @@ on:
         - 'patch'
         
 jobs:
-  build:
+  publish-npm:
     runs-on: ubuntu-latest
     permissions:
       contents: write
