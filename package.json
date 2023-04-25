@@ -1,6 +1,6 @@
 {
   "name": "lt-schematics",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A schematics for NestJS to generate mongoose models from Libertech",
   "scripts": {
     "build": "tsc -p tsconfig.json",
