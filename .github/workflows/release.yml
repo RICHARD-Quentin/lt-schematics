@@ -31,7 +31,7 @@ jobs:
       packages: write
 
     steps:
-      - name: Build docker
+      - name: Publish to npm
         uses: Libertech-FR/lt-actions/release-npm@main
         with:
           version_increment: ${{ github.event.inputs.version_increment }}
