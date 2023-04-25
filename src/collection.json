@@ -1,0 +1,10 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "mongoose": {
+      "description": "Generates a mongoose model",
+      "factory": "./mongoose/index#mongooseSchematic",
+      "schema": "./mongoose/schema.json"
+    }
+  }
+}
