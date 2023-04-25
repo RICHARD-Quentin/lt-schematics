@@ -14,7 +14,7 @@ on:
         - 'patch'
         
 jobs:
-  build:
+  publish-npm:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -27,3 +27,19 @@ jobs:
           version_increment: ${{ github.event.inputs.version_increment }}
           repository: ${{ github.repository }}
           github_token: ${{ secrets.PUBLISH_TOKEN }}
+          package_manager: "npm"
+
+  publish-yarn:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+      - name: Publish to yarn
+        uses: Libertech-FR/lt-actions/release-npm@main
+        with:
+          version_increment: ${{ github.event.inputs.version_increment }}
+          repository: ${{ github.repository }}
+          github_token: ${{ secrets.PUBLISH_TOKEN }}
+          package_manager: "yarn"
