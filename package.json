@@ -4,7 +4,7 @@
   "description": "A schematics for NestJS to generate mongoose models from Libertech",
   "repository": "https://github.com/RICHARD-Quentin/lt-schematics",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc",
     "test": "npm run build && jasmine src/**/*_spec.js"
   },
   "keywords": [
