@@ -16,7 +16,8 @@
     "registry": "https://npm.pkg.github.com",
     "access": "public",
     "tag": "latest",
-    "scope": "@libertech"
+    "scope": "@RICHARD-Quentin",
+    "repository": "https://github.com/RICHARD-Quentin/lt-schematics"
   },
   "dependencies": {
     "@angular-devkit/core": "^15.2.6",
