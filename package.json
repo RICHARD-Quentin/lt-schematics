@@ -7,6 +7,9 @@
     "url": "https://github.com/RICHARD-Quentin/lt-schematics"
   },
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rm -rf dist && tsc --project tsconfig.lib.json",
     "postbuild": "npm run copy:collection && npm run copy:lib",
