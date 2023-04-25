@@ -1,5 +1,5 @@
 {
-  "name": "lt-schematics",
+  "name": "@richard-quentin/lt-schematics",
   "version": "0.2.3",
   "description": "A schematics for NestJS to generate mongoose models from Libertech",
   "repository": "https://github.com/RICHARD-Quentin/lt-schematics",
@@ -15,10 +15,7 @@
   "schematics": "./src/collection.json",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
-    "access": "public",
-    "tag": "latest",
-    "scope": "@RICHARD-Quentin",
-    "repository": "https://github.com/RICHARD-Quentin/lt-schematics"
+    "access": "public"
   },
   "dependencies": {
     "@angular-devkit/core": "^15.2.6",
