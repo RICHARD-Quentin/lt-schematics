@@ -36,4 +36,4 @@ jobs:
         with:
           version_increment: ${{ github.event.inputs.version_increment }}
           repository: ${{ github.repository }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.PUBLISH_TOKEN }}
