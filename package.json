@@ -1,6 +1,6 @@
 {
   "name": "@kradihsoy/lt-schematics",
-  "version": "0.2.15",
+  "version": "0.2.16",
   "description": "A schematics for NestJS to generate mongoose models from Libertech",
   "repository": {
     "type": "git",
@@ -17,11 +17,11 @@
     "copy:lib": "cpx 'src/lib/**/{files,workspace}/**/*.*' dist/lib && cpx 'src/lib/**/{files,workspace}/**/.!(gitignore)' dist/lib",
     "test": "npm run build && jasmine src/**/*_spec.js",
     "prepublish:patch": "yarn version --patch && yarn build",
-    "publish:patch": "yarn publish --access public --tag $npm_package_version",
+    "publish:patch": "npm publish --access public",
     "prepublish:minor": "yarn version --minor && yarn build",
-    "publish:minor": "yarn publish --access public --tag $npm_package_version",
+    "publish:minor": "npm publish --access public",
     "prepublish:major": "yarn version --major && yarn build",
-    "publish:major": "yarn publish --access public --tag $npm_package_version",
+    "publish:major": "npm publish --access public",
     "postpublish": "git push && git push --tags"
   },
   "keywords": [
