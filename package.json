@@ -1,6 +1,6 @@
 {
-  "name": "@richard-quentin/lt-schematics",
-  "version": "0.2.12",
+  "name": "@kradihsoy/lt-schematics",
+  "version": "0.2.14",
   "description": "A schematics for NestJS to generate mongoose models from Libertech",
   "repository": {
     "type": "git",
@@ -16,10 +16,13 @@
     "copy:collection": "cpx src/collection.json dist && cpx 'src/lib/**/schema.json' dist/lib",
     "copy:lib": "cpx 'src/lib/**/{files,workspace}/**/*.*' dist/lib && cpx 'src/lib/**/{files,workspace}/**/.!(gitignore)' dist/lib",
     "test": "npm run build && jasmine src/**/*_spec.js",
-    "prepublish:next": "npm run build",
-    "publish:next": "npm publish --access public --tag next",
-    "prepublish:npm": "npm run build",
-    "publish:npm": "npm publish --access public"
+    "prepublish:patch": "yarn version --patch && yarn build",
+    "publish:patch": "yarn publish --access public",
+    "prepublish:minor": "yarn version --minor && yarn build",
+    "publish:minor": "yarn publish --access public",
+    "prepublish:major": "yarn version --major && yarn build",
+    "publish:major": "yarn publish --access public",
+    "postpublish": "git push && git push --tags"
   },
   "keywords": [
     "schematics"
@@ -28,8 +31,9 @@
   "license": "MIT",
   "schematics": "./dist/collection.json",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
-    "access": "public"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public",
+    "scope": "@kradihsoy"
   },
   "dependencies": {
     "@angular-devkit/core": "^15.2.6",
