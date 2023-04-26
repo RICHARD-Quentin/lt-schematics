@@ -3,8 +3,8 @@
   "schematics": {
     "mongoose": {
       "description": "Generates a mongoose model",
-      "factory": "./mongoose/index#mongooseSchematic",
-      "schema": "./mongoose/schema.json"
+      "factory": "./lib/mongoose/index#mongooseSchematic",
+      "schema": "./lib/mongoose/schema.json"
     }
   }
 }
