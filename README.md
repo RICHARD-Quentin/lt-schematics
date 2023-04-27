@@ -1,28 +1,28 @@
-# Getting Started With Schematics
+# Presentation
 
-This repository is a basic Schematic implementation that serves as a starting point to create and publish Schematics to NPM.
+This project was generated with [Angular CLI]
 
-### Testing
+## Requirements
 
-To test locally, install `@angular-devkit/schematics-cli` globally and use the `schematics` command line tool. That tool acts the same as the `generate` command of the Angular CLI, but also has a debug mode.
+- [Node.js](https://nodejs.org/en/) (>= 10.13.0)
+- [Nest CLI](https://docs.nestjs.com/cli/overview) (>= 7.0.0)
 
-Check the documentation with
+## Install
 
-```bash
-schematics --help
-```
+Run `npm install @kradihsoy/lt-schematics` to install the schematics.
 
-### Unit Testing
+Yarn : `yarn add @kradihsoy/lt-schematics`
 
-`npm run test` will run the unit tests, using Jasmine as a runner and test framework.
+## Usage
 
-### Publishing
+Run `nest generate -c @kradihsoy/lt-schematics mongoose <name> <path> <spec> <dto> <skipImport>` to generate a new component.
 
-To publish, simply do:
+## Options
 
-```bash
-npm run build
-npm publish
-```
-
-That's it!
+| Option | Type | Default | Description |
+| ------ | ---- | ------- | ----------- |
+| name | string |  | The name of the component. |
+| path | string | src | The path to create the component. |
+| spec | boolean | true | Specifies if a spec file is generated. |
+| dto | boolean | true | Specifies if a dto file is generated. |
+| skipImport | boolean | false | Specifies if the module imports are skipped. |
