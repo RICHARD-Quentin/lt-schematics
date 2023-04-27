@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
-import { <%= classify(name) %>Dto } from './.dto/<%= dasherize(name) %>.dto'
-import { <%= classify(name) %> } from './.schemas/<%= dasherize(name) %>.schema'
+import { <%= classify(name) %>Dto } from './dto/<%= dasherize(name) %>.dto'
+import { <%= classify(name) %> } from './schemas/<%= dasherize(name) %>.schema'
 import { Model, FilterQuery, QueryOptions } from 'mongoose'
 import { DeleteResult } from 'mongodb'
 

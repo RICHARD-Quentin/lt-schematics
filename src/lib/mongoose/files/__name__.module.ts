@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common'
 import { MongooseModule } from '@nestjs/mongoose'
-import { <%= classify(name) %>Schema, <%= classify(name) %> } from './.schemas/<%= dasherize(name) %>.schema'
+import { <%= classify(name) %>Schema, <%= classify(name) %> } from './schemas/<%= dasherize(name) %>.schema'
 import { <%= classify(name) %>Service } from './<%= dasherize(name) %>.service'
 import { <%= classify(name) %>Controller } from './<%= dasherize(name) %>.controller'
 

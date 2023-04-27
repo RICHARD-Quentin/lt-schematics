@@ -13,11 +13,12 @@ import {
   HttpException,
 } from '@nestjs/common'
 import { Request, Response } from 'express'
-import { <%= classify(name) %>Dto } from './.dto/<%= dasherize(name) %>.dto'
-import { <%= classify(name) %> } from './.schemas/<%= dasherize(name) %>.schema'
+import { <%= classify(name) %>Dto } from './dto/<%= dasherize(name) %>.dto'
+import { <%= classify(name) %> } from './schemas/<%= dasherize(name) %>.schema'
 import { <%= classify(name) %>Service } from './<%= dasherize(name) %>.service'
+import { DeleteResult } from 'mongodb'
 
-@Controller('<%= camelize(name) %>s')
+@Controller('<%= camelize(name) %>')
 export class <%= classify(name) %>Controller {
   constructor(private readonly service: <%= classify(name) %>Service) {}
 
@@ -29,7 +30,7 @@ export class <%= classify(name) %>Controller {
     @Query('itemsPerPage') itemsPerPage?: string,
     @Query('page') page?: string,
     @Query('sorts') sorts?: string | string[],
-  ): Promise<Response<any, Record<string, any>>> {
+  ):Promise<Response<{ data: <%= classify(name) %>[]; total: number }>> {
     const payload = {
       data: [],
       total: 0,
@@ -58,27 +59,27 @@ export class <%= classify(name) %>Controller {
   }
 
   @Get(':id')
-  async read(@Param('id') id: string, @Res() res: Response): Promise<Response<any, Record<string, any>>> {
+  async read(@Param('id') id: string, @Res() res: Response): Promise<Response<{ data: <%= classify(name) %> }>> {
     try {
-      const result = await this.service.read(id)
-      return res.status(HttpStatus.OK).json(result)
+      const data = await this.service.read(id)
+      return res.status(HttpStatus.OK).json(data)
     } catch (error) {
       throw new HttpException(error.message, HttpStatus.BAD_REQUEST)
     }
   }
 
   @Post()
-  async create(@Body() dto: <%= classify(name) %>Dto, @Res() res: Response): Promise<Response<any, Record<string, any>>> {
+  async create(@Body() dto: <%= classify(name) %>Dto, @Res() res: Response): Promise<Response<{ data: <%= classify(name) %> }>> {
     try {
-      const result = await this.service.create(dto)
-      return res.status(HttpStatus.CREATED).json(result)
+      const data = await this.service.create(dto)
+      return res.status(HttpStatus.CREATED).json(data)
     } catch (error) {
       throw new HttpException(error.message, HttpStatus.BAD_REQUEST)
     }
   }
 
   @Patch(':id')
-  async update(@Param('id') id: string, @Body() dto: <%= classify(name) %>Dto, @Res() res: Response): Promise<Response<any, Record<string, any>>> {
+  async update(@Param('id') id: string, @Body() dto: <%= classify(name) %>Dto, @Res() res: Response): Promise<Response<{ data: <%= classify(name) %> }>> {
     try {
       const result = await this.service.update(id, dto)
       return res.status(HttpStatus.OK).json(result)
@@ -88,10 +89,10 @@ export class <%= classify(name) %>Controller {
   }
 
   @Delete(':id')
-  async remove(@Param('id') id: string, @Res() res: Response): Promise<Response<any, Record<string, any>>> {
+  async remove(@Param('id') id: string, @Res() res: Response): Promise<Response<{ data: DeleteResult }>> {
     try {
-      const result = await this.service.remove(id)
-      return res.status(HttpStatus.OK).json(result)
+      const data = await this.service.remove(id)
+      return res.status(HttpStatus.OK).json(data)
     } catch (error) {
       throw new HttpException(error.message, HttpStatus.BAD_REQUEST)
     }
