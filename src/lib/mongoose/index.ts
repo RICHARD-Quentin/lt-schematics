@@ -8,15 +8,28 @@ import {
   template,
   MergeStrategy,
   chain,
+  filter,
 } from '@angular-devkit/schematics'
 import { strings } from '@angular-devkit/core'
 import { Tree } from '@angular-devkit/schematics/src/tree/interface'
 import 'reflect-metadata'
 import { ModuleFinder, ModuleDeclarator } from '../../utils'
-export function mongooseSchematic(options: any): Rule {
+import { MongooseSchematicOptions } from './mongoose.options.interface'
+export function mongooseSchematic(options: MongooseSchematicOptions): Rule {
   return () => {
+    const getDtoFiles = options.dto
+    const getSpecFiles = options.spec
     const sourceTemplates = url('./files')
     const templateSource = apply(sourceTemplates, [
+      filter((path) => {
+        if (path.endsWith('.spec.ts')) {
+          return getSpecFiles
+        }
+        if (path.endsWith('.dto.ts')) {
+          return getDtoFiles
+        }
+        return true
+      }),
       template({
         ...strings,
         ...options,

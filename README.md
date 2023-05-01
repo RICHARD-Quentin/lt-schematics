@@ -19,10 +19,10 @@ Run `nest generate -c @kradihsoy/lt-schematics mongoose <name> <path> <spec> <dt
 
 ## Options
 
-| Option | Type | Default | Description |
-| ------ | ---- | ------- | ----------- |
-| name | string |  | The name of the component. |
-| path | string | src | The path to create the component. |
-| spec | boolean | true | Specifies if a spec file is generated. |
-| dto | boolean | true | Specifies if a dto file is generated. |
-| skipImport | boolean | false | Specifies if the module imports are skipped. |
+| Option | Type | Default | Description | Required |
+| ------ | ---- | ------- | ----------- | -------- |
+| name | string |  | The name of the component. | true |
+| path | string | src | The path to create the component. | false |
+| spec | boolean | true | Specifies if a spec file is generated. | false |
+| dto | boolean | true | Specifies if a dto file is generated. | false |
+| skipImport | boolean | false | Specifies if the module imports are skipped. | false |
