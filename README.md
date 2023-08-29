@@ -7,6 +7,12 @@ This project was generated with [Angular CLI]
 - [Node.js](https://nodejs.org/en/) (>= 10.13.0)
 - [Nest CLI](https://docs.nestjs.com/cli/overview) (>= 7.0.0)
 
+## Publish
+
+Commit the changes and run `npm run publish:<option>` to publish the schematics.
+
+<option> can be `patch`, `minor` or `major`.
+
 ## Install
 
 Run `npm install @kradihsoy/lt-schematics` to install the schematics.
