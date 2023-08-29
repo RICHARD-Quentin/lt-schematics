@@ -70,6 +70,7 @@ function addDeclarationToModule(options: any) {
         ...options,
         metadata: 'imports',
         path: `${options.path}/${options.name}`,
+        inheritPath: `${options.inheritPath}/${options.inheritName}`,
         type: 'module',
       }),
     )
