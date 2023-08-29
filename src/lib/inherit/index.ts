@@ -19,6 +19,7 @@ export function inheritSchematic(options: InheritSchematicOptions): Rule {
   return () => {
     const getDtoFiles = options.dto
     const getSpecFiles = options.spec
+    options.inheritPath = `${options.inheritPath}/${options.inheritName}`
     const sourceTemplates = url('./files')
     const templateSource = apply(sourceTemplates, [
       filter((path) => {
@@ -70,7 +71,6 @@ function addDeclarationToModule(options: any) {
         ...options,
         metadata: 'imports',
         path: `${options.path}/${options.name}`,
-        inheritPath: `${options.inheritPath}/${options.inheritName}`,
         type: 'module',
       }),
     )
