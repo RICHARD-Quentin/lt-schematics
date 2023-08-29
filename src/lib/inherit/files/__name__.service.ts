@@ -7,8 +7,8 @@ import { Model } from 'mongoose'
 @Injectable()
 export class <%= classify(name) %>Service extends <%= classify(inheritName)%>Service {
   constructor(
-    @InjectModel(TestIn.name)
-    protected model: Model<TestIn>,
+    @InjectModel(<%= classify(name) %>.name)
+    protected model: Model<<%= classify(name) %>>,
   ) {
     super()
   }
