@@ -1,6 +1,6 @@
 {
   "name": "@kradihsoy/lt-schematics",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A schematics for NestJS to generate mongoose models from Libertech",
   "repository": {
     "type": "git",
