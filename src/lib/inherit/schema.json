@@ -25,6 +25,18 @@
         "index": 1
       }
     },
+    "inheritPath": {
+      "description": "The path to the entity to inherit from.",
+      "type": "string",
+      "format": "path",
+      "minLength": 1,
+      "x-prompt": "What's the path to the entity to inherit from?",
+      "default": "src/abtract",
+      "$default": {
+        "$source": "argv",
+        "index": 2
+      }
+    },
     "path": {
       "description": "The path to create the entity.",
       "type": "string",
@@ -32,7 +44,7 @@
       "default": "src",
       "$default": {
         "$source": "argv",
-        "index": 2
+        "index": 3
       }
     },
     "spec": {
@@ -42,7 +54,7 @@
       "x-prompt": "Would you like to generate a spec file for the entity?",
       "$default": {
         "$source": "argv",
-        "index": 3
+        "index": 4
       }
     },
     "dto": {
@@ -52,7 +64,7 @@
       "x-prompt": "Would you like to generate a dto file for the schema ?",
       "$default": {
         "$source": "argv",
-        "index": 4
+        "index": 5
       }
     },
     "module": {
@@ -75,6 +87,7 @@
   },
   "required": [
     "name",
-    "inheritName"
+    "inheritName",
+    "inheritPath"
   ]
 }
