@@ -9,7 +9,7 @@ This project was generated with [Angular CLI]
 
 ## Publish
 
-Commit the changes and run `npm run publish:<option>` to publish the schematics.
+Commit the changes and run `npm run publish:<option>` or `yarn publish:<option>` to publish the schematics.
 
 <option> can be `patch`, `minor` or `major`.
 
