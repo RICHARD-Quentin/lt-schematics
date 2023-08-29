@@ -5,7 +5,7 @@ import { <%= classify(name) %>Service } from './<%= dasherize(name) %>.service'
 
 @Controller('<%= camelize(name) %>')
 export class <%= classify(name) %>Controller extends <%= classify(inheritName) %>Controller {  
-  constructor(private readonly service: TestInService) {
+  constructor(private readonly service: <%= classify(inheritName) %>Service) {
     super()
   }
 }
