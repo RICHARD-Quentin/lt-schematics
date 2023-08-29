@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "inherit",
+  "title": "Inherit Schematic Options",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the entity.",
+      "type": "string",
+      "minLength": 1,
+      "x-prompt": "What's the name of the entity?",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "inheritName": {
+      "description": "The name of the entity to inherit from.",
+      "type": "string",
+      "minLength": 1,
+      "x-prompt": "What's the name of the entity to inherit from?",
+      "default": "Abstract",
+      "$default": {
+        "$source": "argv",
+        "index": 1
+      }
+    },
+    "path": {
+      "description": "The path to create the entity.",
+      "type": "string",
+      "format": "path",
+      "default": "src",
+      "$default": {
+        "$source": "argv",
+        "index": 2
+      }
+    },
+    "spec": {
+      "description": "Flag to indicate if a spec file is generated.",
+      "type": "boolean",
+      "default": true,
+      "x-prompt": "Would you like to generate a spec file for the entity?",
+      "$default": {
+        "$source": "argv",
+        "index": 3
+      }
+    },
+    "dto": {
+      "description": "Flag to indicate if a dto file is generated.",
+      "type": "boolean",
+      "default": true,
+      "x-prompt": "Would you like to generate a dto file for the schema ?",
+      "$default": {
+        "$source": "argv",
+        "index": 4
+      }
+    },
+    "module": {
+      "type": "string",
+      "format": "path",
+      "description": "The path to import the module."
+    },
+    "language": {
+      "type": "string",
+      "description": "Nest module language (ts/js)."
+    },
+    "sourceRoot": {
+      "type": "string",
+      "description": "Nest module source root directory."
+    },
+    "skipImport": {
+      "description": "Flag to skip the module import.",
+      "default": false
+    }
+  },
+  "required": [
+    "name",
+    "inheritName"
+  ]
+}

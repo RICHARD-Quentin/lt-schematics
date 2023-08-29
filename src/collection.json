@@ -5,6 +5,11 @@
       "description": "Generates a mongoose model",
       "factory": "./lib/mongoose/index#mongooseSchematic",
       "schema": "./lib/mongoose/schema.json"
+    },
+    "inherit": {
+      "description": "Generates a mongoose model that inherits from another model",
+      "factory": "./lib/inherit/index#inheritSchematic",
+      "schema": "./lib/inherit/schema.json"
     }
   }
 }
