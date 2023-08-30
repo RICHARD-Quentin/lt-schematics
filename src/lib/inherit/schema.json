@@ -31,7 +31,7 @@
       "format": "path",
       "minLength": 1,
       "x-prompt": "What's the path to the entity to inherit from?",
-      "default": "src/abtract",
+      "default": "~/abtract",
       "$default": {
         "$source": "argv",
         "index": 2
@@ -42,6 +42,7 @@
       "type": "string",
       "format": "path",
       "default": "src",
+      "x-prompt": "What's the path to create the entity?",
       "$default": {
         "$source": "argv",
         "index": 3

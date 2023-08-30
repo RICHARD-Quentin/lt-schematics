@@ -1,6 +1,6 @@
 import { Schema, SchemaFactory } from '@nestjs/mongoose'
 import { Document } from 'mongoose'
-import { <%= classify(inheritName) %> } from '<%= inheritPath %>'
+import { <%= classify(inheritName) %> } from '<%= inheritPath %>/schemas/abstract.schema'
 
 export type <%= classify(name) %>Document = <%= classify(name) %> & Document
 
