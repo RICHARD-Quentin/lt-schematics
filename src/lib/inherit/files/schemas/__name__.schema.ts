@@ -5,6 +5,6 @@ import { <%= classify(inheritName) %> } from '<%= inheritPath %>/schemas/abstrac
 export type <%= classify(name) %>Document = <%= classify(name) %> & Document
 
 @Schema({ versionKey: false })
-export class <%= classify(name) %> extends <%= classify(inheritName) %> {}
+export class <%= classify(name) %> extends <%= classify(inheritName) %>Schema {}
 
 export const <%= classify(name) %>Schema = SchemaFactory.createForClass(<%= classify(name) %>)
